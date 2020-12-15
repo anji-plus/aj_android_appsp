@@ -8,7 +8,7 @@ android {
         minSdkVersion 21
         targetSdkVersion 29
         versionCode 1
-        versionName "0.0.1"
+        versionName "0.0.2"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -22,6 +22,11 @@ android {
             dirs 'libs'
         }
     }
+    sourceSets {
+        main {
+            assets.srcDirs = ['src/main/assets']
+        }
+    }
 }
 
 dependencies {
@@ -31,7 +36,7 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
-    implementation 'com.amap.api:location:latest.integration'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    implementation 'anji.sdk.appsp:aar:0.0.1'
+    //引用sdk，把sdk打包成aar上传到github，具体打包见appsplibrary的build.bradle配置
+    implementation 'anji.sdk.appsp:aar:0.0.2'
 }

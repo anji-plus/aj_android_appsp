@@ -15,14 +15,20 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
 import com.anji.appsp.sdk.AppSpConfig;
-import com.anji.appsp.sdk.AppSpLog;
-import com.anji.appsp.sdk.IAppSpVersionUpdateCallback;
+import com.anji.appsp.sdk.version.service.IAppSpVersionCallback;
 import com.anji.appsp.sdk.http.AppSpRespCode;
 import com.anji.appsp.sdk.model.AppSpModel;
 import com.anji.appsp.sdk.model.AppSpVersion;
 import com.anji.appsp.sdktest.R;
 
-
+/**
+ * Copyright © 2018 anji-plus
+ * 安吉加加信息技术有限公司
+ * http://www.anji-plus.com
+ * All rights reserved.
+ *
+ * 版本更新-更新测试页面
+ */
 public class UpdateTestActivity extends AppCompatActivity implements View.OnClickListener {
     //appkey在移动服务平台创建项目时生成
     private final int REQUEST_CODE_ASK_PERMISSIONS = 11;
@@ -144,7 +150,7 @@ public class UpdateTestActivity extends AppCompatActivity implements View.OnClic
     }
 
     private void checkVersion(final UpdateType updateType) {
-        AppSpConfig.getInstance().setVersionUpdateCallback(new IAppSpVersionUpdateCallback() {
+        AppSpConfig.getInstance().getVersion(new IAppSpVersionCallback() {
             @Override
             public void update(AppSpModel<AppSpVersion> spModel) {
                 //因为是异步，注意当前窗口是否活跃

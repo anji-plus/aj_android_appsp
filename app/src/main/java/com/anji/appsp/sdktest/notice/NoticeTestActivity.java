@@ -13,7 +13,7 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.anji.appsp.sdk.AppSpConfig;
-import com.anji.appsp.sdk.IAppSpNoticeCallback;
+import com.anji.appsp.sdk.notice.service.IAppSpNoticeCallback;
 import com.anji.appsp.sdk.http.AppSpRespCode;
 import com.anji.appsp.sdk.model.AppSpModel;
 import com.anji.appsp.sdk.model.AppSpNoticeModelItem;
@@ -24,7 +24,14 @@ import java.util.concurrent.ThreadLocalRandom;
 
 import static com.anji.appsp.sdktest.notice.NoticeEnum.Normal;
 
-
+/**
+ * Copyright © 2018 anji-plus
+ * 安吉加加信息技术有限公司
+ * http://www.anji-plus.com
+ * All rights reserved.
+ * <p>
+ * 公告管理-公告测试页面
+ */
 public class NoticeTestActivity extends AppCompatActivity implements View.OnClickListener {
     //appkey在移动服务平台创建项目时生成
 
@@ -117,7 +124,7 @@ public class NoticeTestActivity extends AppCompatActivity implements View.OnClic
     }
 
     private void checkNotice(final NoticeEnum noticeType) {
-        AppSpConfig.getInstance().setNoticeCallback(new IAppSpNoticeCallback() {
+        AppSpConfig.getInstance().getNotice(new IAppSpNoticeCallback() {
             @Override
             public void notice(AppSpModel<List<AppSpNoticeModelItem>> spModel) {
                 //因为是异步，注意当前窗口是否活跃

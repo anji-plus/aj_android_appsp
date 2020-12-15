@@ -43,9 +43,13 @@ import static com.anji.appsp.sdktest.DeviceUtil.getScreenWidth;
 
 
 /**
- * Created by wuyan on 2017/12/6.
+ * Copyright © 2018 anji-plus
+ * 安吉加加信息技术有限公司
+ * http://www.anji-plus.com
+ * All rights reserved.
+ *
+ * 版本更新-更新测试页面
  */
-
 public class UpdateDialogFragment extends DialogFragment implements View.OnClickListener {
     private TextView tvContent;
     private TextView tvOk;

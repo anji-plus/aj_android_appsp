@@ -20,6 +20,14 @@ import com.anji.appsp.sdk.model.AppSpNoticeModelItem;
 import com.anji.appsp.sdktest.AppContext;
 import com.anji.appsp.sdktest.R;
 
+/**
+ * Copyright © 2018 anji-plus
+ * 安吉加加信息技术有限公司
+ * http://www.anji-plus.com
+ * All rights reserved.
+ * <p>
+ * 公告管理-公告测试页面
+ */
 public class NoticeDialogFragment extends DialogFragment implements View.OnClickListener {
     private TextView tvTitle;
     private TextView tvContent;
